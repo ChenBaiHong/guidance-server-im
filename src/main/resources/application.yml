@@ -1,0 +1,34 @@
+server:
+  port: 28007
+  servlet:
+    compression:
+      enabled: true
+      mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics,httptrace
+spring:
+  application:
+    name: ms-server-im
+  http:
+    encoding:
+      force: true
+  security:
+    user:
+      name: admin
+      password: 123456
+  jackson:
+    date-format:   yyyy-MM-dd HH:mm:ss
+    time-zone:   GMT+8
+  aop:
+    proxy-target-class: true
+  # 设置静态文件路径，js,css等
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/,classpath:/public/,classpath:/ssl/,classpath:/META-INF/resources/,classpath:/page/
+# tomcat 性能调优
+# jar 方式启动调优
+# java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms2048m -Xmx2048m -Xmn256m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC hospc-module-wxmin.jar --spring.profiles.active=prod
