@@ -14,7 +14,7 @@
     <properties>
         <tio-websocket-server.version>3.2.1.v20181024-RELEASE</tio-websocket-server.version>
         <commons-collections4.version>4.2</commons-collections4.version>
-        <fastjson.version>1.2.56</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
     <dependencies>
         <dependency>
